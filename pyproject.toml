@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "get-reactions-bot"
+version = "0.1.0"
+description = ""
+authors = ["egor <sharapov.egor00@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pyrogram = "^2.0.106"
+environs = "^11.0.0"
+emoji = "^2.12.1"
+
+
+[tool.poetry.group.lint.dependencies]
+black = "^24.4.2"
+flake8 = "^7.1.0"
+isort = "^5.13.2"
+
+
+[tool.black]
+# максимальная длина строки
+line-length = 119
+# файлы, которые не нужно форматировать
+exclude = '''
+(
+  /(
+      \.eggs         # исключить несколько общих каталогов в
+    | \.git          # корне проекта
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | dist
+  )/
+  | foo.py           # также отдельно исключить файл с именем foo.py в
+                     # корне проекта
+)
+'''
+
+[tool.isort]
+# максимальная длина строки
+line_length = 119
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
