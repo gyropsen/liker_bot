@@ -23,4 +23,7 @@ RUN poetry install --no-dev
 # Копируем код приложения в контейнер
 COPY . .
 
+# Создать папку для логов
+CMD ["sh", "-c", "mkdir logs"]
+
 CMD ["sh", "-c", "python3 main.py"]
